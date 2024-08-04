@@ -8,7 +8,7 @@
 
 [![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/cs100/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
-CS100超聲波測距模塊可提供 2cm-400cm的非接觸式距離感測功能，測距精度可達高到 3mm。模塊包括超聲波發射器、接收器與控制電路。
+CS100超聲波測距模塊可提供 2cm-400cm的非接觸式距離感測功能，測距精度可達3mm。模塊包括超聲波發射器、接收器與控制電路。
 
 LibDriver CS100是LibDriver推出的CS100全功能驅動，該驅動提供超聲波測距的功能並且它符合MISRA標準。
 
