@@ -96,8 +96,8 @@ uint8_t cs100_read_test(uint32_t times)
         return 1;
     }
     
-    /* start register test */
-    cs100_interface_debug_print("cs100: start register test.\n");
+    /* start read test */
+    cs100_interface_debug_print("cs100: start read test.\n");
     for (i = 0; i < times; i++)
     {
         uint32_t time_us;
@@ -117,8 +117,8 @@ uint8_t cs100_read_test(uint32_t times)
         cs100_interface_delay_ms(2000);
     }
     
-    /* finish register test */
-    cs100_interface_debug_print("cs100: finish register test.\n");
+    /* finish read test */
+    cs100_interface_debug_print("cs100: finish read test.\n");
     (void)cs100_deinit(&gs_handle);
     
     return 0;

@@ -105,11 +105,11 @@ cs100: max supply voltage is 5.5V.
 cs100: max current is 5.30mA.
 cs100: max temperature is 85.0C.
 cs100: min temperature is -40.0C.
-cs100: start register test.
+cs100: start read test.
 cs100: distance is 10.574000cm.
 cs100: distance is 10.234000cm.
 cs100: distance is 10.250999cm.
-cs100: finish register test.
+cs100: finish read test.
 ```
 
 ```shell
