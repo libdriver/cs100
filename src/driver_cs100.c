@@ -50,7 +50,7 @@
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an cs100 handle structure
+ * @param[in] *handle pointer to an cs100 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo init failed
@@ -143,7 +143,7 @@ uint8_t cs100_init(cs100_handle_t *handle)
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an cs100 handle structure
+ * @param[in] *handle pointer to an cs100 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo deinit failed
@@ -181,9 +181,9 @@ uint8_t cs100_deinit(cs100_handle_t *handle)
 
 /**
  * @brief      read the distance
- * @param[in]  *handle points to an cs100 handle structure
- * @param[out] *time_us points to a us buffer
- * @param[out] *m points to a distance buffer
+ * @param[in]  *handle pointer to an cs100 handle structure
+ * @param[out] *time_us pointer to a us buffer
+ * @param[out] *m pointer to a distance buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -313,7 +313,7 @@ uint8_t cs100_read(cs100_handle_t *handle, uint32_t *time_us, float *m)
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to an cs100 info structure
+ * @param[out] *info pointer to an cs100 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
