@@ -120,88 +120,88 @@ typedef struct cs100_info_s
 
 /**
  * @brief     initialize cs100_handle_t structure
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] STRUCTURE is cs100_handle_t
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] STRUCTURE cs100_handle_t
  * @note      none
  */
 #define DRIVER_CS100_LINK_INIT(HANDLE, STRUCTURE)      memset(HANDLE, 0, sizeof(STRUCTURE))
 
 /**
  * @brief     link trig_init function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a trig_init function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a trig_init function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_TRIG_INIT(HANDLE, FUC)      (HANDLE)->trig_init = FUC
 
 /**
  * @brief     link trig_deinit function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a trig_deinit function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a trig_deinit function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_TRIG_DEINIT(HANDLE, FUC)    (HANDLE)->trig_deinit = FUC
 
 /**
  * @brief     link trig_write function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a trig_write function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a trig_write function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_TRIG_WRITE(HANDLE, FUC)     (HANDLE)->trig_write = FUC
 
 /**
  * @brief     link echo_init function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to an echo_init function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to an echo_init function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_ECHO_INIT(HANDLE, FUC)      (HANDLE)->echo_init = FUC
 
 /**
  * @brief     link echo_deinit function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to an echo_deinit function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to an echo_deinit function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_ECHO_DEINIT(HANDLE, FUC)    (HANDLE)->echo_deinit = FUC
 
 /**
  * @brief     link echo_read function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to an echo_read function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to an echo_read function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_ECHO_WRITE(HANDLE, FUC)     (HANDLE)->echo_read = FUC
 
 /**
  * @brief     link timestamp_read function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a timestamp_read function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a timestamp_read function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_TIMESTAMP_READ(HANDLE, FUC) (HANDLE)->timestamp_read = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_DELAY_MS(HANDLE, FUC)       (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link delay_us function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a delay_us function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a delay_us function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_DELAY_US(HANDLE, FUC)       (HANDLE)->delay_us = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to an cs100 handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to an cs100 handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_CS100_LINK_DEBUG_PRINT(HANDLE, FUC)    (HANDLE)->debug_print = FUC
@@ -219,7 +219,7 @@ typedef struct cs100_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to an cs100 info structure
+ * @param[out] *info pointer to an cs100 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -229,7 +229,7 @@ uint8_t cs100_info(cs100_info_t *info);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to an cs100 handle structure
+ * @param[in] *handle pointer to an cs100 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo init failed
@@ -241,7 +241,7 @@ uint8_t cs100_init(cs100_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to an cs100 handle structure
+ * @param[in] *handle pointer to an cs100 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 trig or echo deinit failed
@@ -253,9 +253,9 @@ uint8_t cs100_deinit(cs100_handle_t *handle);
 
 /**
  * @brief      read the distance
- * @param[in]  *handle points to an cs100 handle structure
- * @param[out] *time_us points to a us buffer
- * @param[out] *m points to a distance buffer
+ * @param[in]  *handle pointer to an cs100 handle structure
+ * @param[out] *time_us pointer to a us buffer
+ * @param[out] *m pointer to a distance buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed

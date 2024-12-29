@@ -70,7 +70,7 @@ uint8_t cs100_basic_deinit(void);
 
 /**
  * @brief      basic example read
- * @param[out] *m points to a distance buffer
+ * @param[out] *m pointer to a distance buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
