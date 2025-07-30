@@ -285,8 +285,10 @@ uint8_t cs100_read(cs100_handle_t *handle, uint32_t *time_us, float *m)
            
             return 1;                                                                 /* return error */
         }
-        *time_us = (uint32_t)((time_stop.millisecond - time_start.millisecond) * 1000
-                   +(int32_t)(time_stop.microsecond - time_start.microsecond));       /* get time */
+        *time_us = (uint32_t)((int64_t)(((int64_t)time_stop.millisecond - 
+                             (int64_t)time_start.millisecond) * 1000 + 
+                             (int64_t)((int64_t)time_stop.microsecond - 
+                             (int64_t)time_start.microsecond)));                      /* get time */
         if ((*time_us) > 150 * 1000)                                                  /* check time */
         {
             if (retry != 0)                                                           /* check remain retry times */
