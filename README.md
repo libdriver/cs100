@@ -10,7 +10,7 @@
 
 CS100 ultrasonic ranging module can provide a non-contact distance sensing function of 2cm-400cm.The ranging accuracy can reach 3mm. The module includes ultrasonic transmitter, receiver and control circuit.
 
-LibDriver CS100 is a full-featured driver of CS100 launched by LibDriver.It provides the function of ultrasonic ranging.LibDriver is MISRA compliant.
+LibDriver CS100 is a full-featured driver for CS100, launched by LibDriver.It provides ultrasonic ranging and additional features.LibDriver is MISRA compliant.
 
 ### Table of Contents
 
