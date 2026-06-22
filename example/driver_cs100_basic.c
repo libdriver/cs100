@@ -56,7 +56,7 @@ uint8_t cs100_basic_init(void)
     DRIVER_CS100_LINK_TRIG_WRITE(&gs_handle, cs100_interface_trig_write);
     DRIVER_CS100_LINK_ECHO_INIT(&gs_handle, cs100_interface_echo_init);
     DRIVER_CS100_LINK_ECHO_DEINIT(&gs_handle, cs100_interface_echo_deinit);
-    DRIVER_CS100_LINK_ECHO_WRITE(&gs_handle, cs100_interface_echo_read);
+    DRIVER_CS100_LINK_ECHO_READ(&gs_handle, cs100_interface_echo_read);
     DRIVER_CS100_LINK_TIMESTAMP_READ(&gs_handle, cs100_interface_timestamp_read);
     DRIVER_CS100_LINK_DELAY_MS(&gs_handle, cs100_interface_delay_ms);
     DRIVER_CS100_LINK_DELAY_US(&gs_handle, cs100_interface_delay_us);

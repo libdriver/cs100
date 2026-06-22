@@ -172,7 +172,7 @@ typedef struct cs100_info_s
  * @param[in] FUC pointer to an echo_read function address
  * @note      none
  */
-#define DRIVER_CS100_LINK_ECHO_WRITE(HANDLE, FUC)     (HANDLE)->echo_read = FUC
+#define DRIVER_CS100_LINK_ECHO_READ(HANDLE, FUC)      (HANDLE)->echo_read = FUC
 
 /**
  * @brief     link timestamp_read function
