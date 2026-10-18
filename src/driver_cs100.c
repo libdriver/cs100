@@ -217,7 +217,7 @@ uint8_t cs100_read(cs100_handle_t *handle, uint32_t *time_us, float *m)
            
             return 1;                                                                 /* return error */
         }
-        handle->delay_us(20);                                                         /* delay 20 us */
+        handle->delay_us(50);                                                         /* delay 50 us */
         res = handle->trig_write(0);                                                  /* write trig 0 */
         if (res != 0)                                                                 /* check result */
         {
@@ -226,8 +226,8 @@ uint8_t cs100_read(cs100_handle_t *handle, uint32_t *time_us, float *m)
             return 1;                                                                 /* return error */
         }
         value = 0;                                                                    /* reset value */
-        timeout = 1000 * 5000;                                                        /* set timeout */
-        while (value == 0)                                                            /* wait 5 s */
+        timeout = 1000 * 60;                                                          /* set timeout */
+        while (value == 0)                                                            /* wait 60 ms */
         {
             res = handle->echo_read((uint8_t *)&value);                               /* read echo data */
             if (res != 0)                                                             /* check result */
@@ -253,7 +253,7 @@ uint8_t cs100_read(cs100_handle_t *handle, uint32_t *time_us, float *m)
             return 1;                                                                 /* return error */
         }
         value = 1;                                                                    /* reset value */
-        timeout = 1000 * 5000;                                                        /* wait 5 s */
+        timeout = 1000 * 75;                                                          /* wait 75 ms */
         while (value != 0)                                                            /* check value */
         {
             res = handle->echo_read((uint8_t *)&value);                               /* read echo data */
@@ -289,12 +289,12 @@ uint8_t cs100_read(cs100_handle_t *handle, uint32_t *time_us, float *m)
                              (int64_t)time_start.millisecond) * 1000 + 
                              (int64_t)((int64_t)time_stop.microsecond - 
                              (int64_t)time_start.microsecond)));                      /* get time */
-        if ((*time_us) > 150 * 1000)                                                  /* check time */
+        if ((*time_us) > 60 * 1000)                                                   /* check time */
         {
             if (retry != 0)                                                           /* check remain retry times */
             {
                 retry--;                                                              /* retry times-- */
-                handle->delay_ms(150 + rand()%100);                                   /* delay rand time */
+                handle->delay_ms(70 + rand() % 10);                                   /* delay rand time */
             }
             else
             {
